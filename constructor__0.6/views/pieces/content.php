@@ -1,1 +1,0 @@
-Constructor Simple Framework. Build 0.6

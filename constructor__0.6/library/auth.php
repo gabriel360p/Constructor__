@@ -3,6 +3,10 @@ include_once __DIR__ . '/direction.php';
 
 function authenticate()
 { //verifica se esta logado
+    if (!(isset($_SESSION['user']))) {
+        render('/views/errors/notauthenticate.php');
+        die();
+    }
 }
 
 

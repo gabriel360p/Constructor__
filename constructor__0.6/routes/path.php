@@ -13,6 +13,12 @@ switch ($uri) {
         welcome();
         break;
 
+    case '/dash':
+        isGet($method);
+        authenticate(); //verificando se o usário está autenticado
+        include_once __DIR__ . '/../controllers/welcomeController.php';
+        dash();
+        break;
 
     case '/login':
         isGet($method);

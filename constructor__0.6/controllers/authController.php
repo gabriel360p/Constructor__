@@ -14,6 +14,7 @@ function register()
 
 function logar()
 {
+    $_SESSION['user'];
     // render('/views/auth/login.php');
 }
 
