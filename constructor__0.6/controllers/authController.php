@@ -14,11 +14,36 @@ function register()
 
 function logar()
 {
-    $_SESSION['user'];
-    // render('/views/auth/login.php');
-}
+    include __DIR__.'/../database/connection.php';
 
+    $inputpassword=md5($_POST['password']);
+    $inputemail=$_POST['email'];
+
+    $result = $db->query("SELECT * FROM user WHERE email LIKE '%" . $inputemail . "%'");
+    $search=$result->fetchArray();
+
+    $username=$search['firstname'];
+    $useremail=$search['email'];
+    $userpassword=$search['password'];
+
+    if(($inputemail==$useremail)&&($inputpassword==$userpassword)){
+        $_SESSION['user']=$username;
+        redirect('/dash');
+    }else{
+        if(isset($_SESSION['user'])){
+            unset($_SESSION['user']);
+            redirect('/login');
+        }else{
+            redirect('/login');
+        }
+    }
+    
+}
+    
 function registrar()
 {
-    // render('/views/auth/register.php');
+    include __DIR__.'/../database/connection.php';
+    $insertUserTable="INSERT INTO user (firstname,lastname,email,password) VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".md5($_POST['password'])."')";
+    $db->exec($insertUserTable);
+    redirect('/login');
 }

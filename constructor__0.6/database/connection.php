@@ -4,4 +4,5 @@ $DBname = "database.db";
 $db = new SQLite3($DBname);
 
 //importa a tabela 
-include_once __DIR__ . '/tables/User.php';
+$createUserTable = "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY NOT NULL,email STRING UNIQUE, firstname STRING, lastname STRING, password STRING)";
+$db->exec($createUserTable);

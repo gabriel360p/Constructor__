@@ -1,2 +1,4 @@
 <?php
-// Código sql da tabela
+// Código sql da tabela user
+
+die();

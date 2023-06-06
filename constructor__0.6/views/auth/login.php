@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <form action="/login" method="POST">
+                    <form action="/logar" method="POST">
 
                         <div class="mb-3">
                             <label for="" class="form-label">Email</label>

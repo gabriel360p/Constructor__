@@ -35,7 +35,7 @@
 
                         <div class="mb-3">
                             <label for="" class="form-label">Nome</label>
-                            <input type="text" class="form-control" required name="name" id="" aria-describedby="helpId" placeholder="">
+                            <input type="text" class="form-control" required name="firstname" id="" aria-describedby="helpId" placeholder="">
                             <small id="helpId" class="form-text text-muted">Entre com o nome</small>
                         </div>
 

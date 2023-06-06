@@ -28,7 +28,7 @@ switch ($uri) {
     case '/logar':
         isPost($method);
         include_once __DIR__ . '/../controllers/authController.php';
-        // logar();
+        logar();
         break;
 
     case '/register':
@@ -39,7 +39,7 @@ switch ($uri) {
     case '/registrar':
         isPost($method);
         include_once __DIR__ . '/../controllers/authController.php';
-        // registrar();
+        registrar();
         break;
 
 
