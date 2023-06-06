@@ -61,7 +61,16 @@
 
   <?php
     include_once __DIR__.'/../../library/auth.php';
-    echo authUser();
+    $user = authId();
+    echo $user['id'];
+    echo "<br>";
+    $user = authUser();
+    echo $user['firstname'];
+    $user = authUser();
+    echo $user['lastname'];
+    echo "<br>";
+    $user = authEmail();
+    echo $user['email'];
   ?>
 
 

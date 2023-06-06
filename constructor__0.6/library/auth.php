@@ -12,24 +12,46 @@ function authenticate()
 
 function authUser()
 { //puxa todos os dados do usuário logado
-    include_once __DIR__ . '/../database/connection.php';
-    $username = $_SESSION['user'];
+    include __DIR__ . '/../database/connection.php';
+    $useremail = $_SESSION['user'];
 
-    $result = $db->query("SELECT * FROM user WHERE firstname LIKE '%" . $username . "%'");
+    $result = $db->query("SELECT firstname,lastname,email FROM user WHERE email LIKE '%" . $useremail . "%'");
     $search=$result->fetchArray();
-    // return $search;
+
+    return $search;
 }
 
 
 function authName()
 { //puxa o nome do usuário logado
+    include __DIR__ . '/../database/connection.php';
+    $useremail = $_SESSION['user'];
+
+    $result = $db->query("SELECT firstname,lastname FROM user WHERE email LIKE '%" . $useremail . "%'");
+    $search=$result->fetchArray();
+
+    return $search;
 }
 
 
 function authEmail()
 { //puxa o email do usuário logado
+    include __DIR__ . '/../database/connection.php';
+    $useremail = $_SESSION['user'];
+
+    $result = $db->query("SELECT email FROM user WHERE email LIKE '%" . $useremail . "%'");
+    $search=$result->fetchArray();
+
+    return $search;
 }
 
 function authId()
 { //puxa o id do usuário logado
+    include __DIR__ . '/../database/connection.php';
+    $useremail = $_SESSION['user'];
+
+    $result = $db->query("SELECT id FROM user WHERE email LIKE '%" . $useremail . "%'");
+    $search=$result->fetchArray();
+
+    return $search;
 }
