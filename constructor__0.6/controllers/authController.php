@@ -11,6 +11,18 @@ function register()
     render('/views/auth/register.php');
 }
 
+function logout()
+{
+    if(isset($_SESSION['user'])){
+        unset($_SESSION['user']);
+        session_destroy();
+        setcookie("PHPSESSID",null,strtotime("-36000 seconds"));
+
+        redirect('/');
+    }else{
+        redirect('/');
+    }
+}
 
 function logar()
 {

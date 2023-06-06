@@ -42,6 +42,12 @@ switch ($uri) {
         registrar();
         break;
 
+    case '/logout':
+        isGet($method);
+        authenticate();
+        include_once __DIR__ . '/../controllers/authController.php';
+        logout();
+        break;
 
     default:
         render('/views/errors/undefined.php');
