@@ -34,12 +34,12 @@ function logar()
     $result = $db->query("SELECT * FROM user WHERE email LIKE '%" . $inputemail . "%'");
     $search=$result->fetchArray();
 
-    $username=$search['firstname'];
+    // $username=$search['firstname'];
     $useremail=$search['email'];
     $userpassword=$search['password'];
 
     if(($inputemail==$useremail)&&($inputpassword==$userpassword)){
-        $_SESSION['user']=$username;
+        $_SESSION['user']=$useremail;
         redirect('/dash');
     }else{
         if(isset($_SESSION['user'])){
