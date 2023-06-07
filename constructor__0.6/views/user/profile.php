@@ -35,7 +35,7 @@
           <div class="mb-3">
             <label for="" class="form-label">Nome do usuário</label>
             <input type="text"
-              class="form-control" required name="firstname" id="" value="<?php 
+              class="form-control" required name="firstname" id="" readonly value="<?php 
               include_once __DIR__.'/../../library/auth.php';
                 $username = authName();
                 echo $username['firstname'];
@@ -49,19 +49,19 @@
               class="form-control" required name="lastname" value="<?php 
               include_once __DIR__.'/../../library/auth.php';
                 $username = authName();
-                // echo $username['lastname'];
-              ?>" id="" aria-describedby="helpId" placeholder="">
+                echo $username['lastname'];
+              ?>" id="" aria-describedby="helpId" placeholder="" readonly>
             <small id="helpId" class="form-text text-muted">Sobrenome do usuário</small>
           </div>
 
           <div class="mb-3">
             <label for="" class="form-label">Email do usuário</label>
             <input type="text"
-              class="form-control" required name="email" value="<?php 
+              class="form-control" required name="email" readonly value="<?php 
               include_once __DIR__.'/../../library/auth.php';
                 $useremail = authEmail();
-                // echo $useremail['email'];
-              ?>" id="" aria-describedby="helpId" placeholder="">
+                echo $useremail['email'];
+              ?>" id="" aria-describedby="helpId" placeholder="" readonly>
             <small id="helpId" class="form-text text-muted">Email do usuário</small>
           </div>
 
@@ -75,7 +75,7 @@
           <div class="mb-3">
             <label for="" class="form-label">Confirmar senha</label>
             <input type="password"
-              class="form-control"  name="confirmedPassword" id="" aria-describedby="helpId" placeholder="">
+              class="form-control"  name="confirmedPassword" readonly id="" aria-describedby="helpId" placeholder="">
             <small id="helpId" class="form-text text-muted">Confirmar senha para realizar alterações</small>
           </div>
 

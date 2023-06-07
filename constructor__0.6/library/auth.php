@@ -68,6 +68,14 @@ function authPassword()
 }
 
 
-function confirmedPassword(){
+function confirmedPassword($password){//este método é válido apenas para verificar a senha do user logado
+    include __DIR__ . '/../database/connection.php';
+    $useremail = $_SESSION['user'];
 
+    $result = $db->query("SELECT password FROM user WHERE email LIKE '%" . $useremail . "%'");
+    $search=$result->fetchArray();
+
+    if($password!=$search['password']){
+        echo "falha  na confirmação de senha";
+    }
 }

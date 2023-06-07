@@ -9,8 +9,7 @@ function profile(){
 function update(){
     include __DIR__.'/../database/connection.php';
     
-    $confirmedPassword=md5($_POST['confirmedPassword']);
-    $userPassword=authPassword();
+    confirmedPassword($confirmedPassword=md5($_POST['confirmedPassword']));
      
     $inputfirstname=$_POST['firstname'];
     $inputlastname=$_POST['lastname'];
@@ -18,21 +17,14 @@ function update(){
     // $inputpassword=$_POST['password'];
     $userId=authId();
 
-    // if($confirmedPassword==$userPassword){
+    $sql = "UPDATE user SET 
+    email = '".$inputemail."', 
+    firstname = '".$inputfirstname."', 
+    lastname = '".$inputlastname."'
+    WHERE id='".$userId."' 
+    ";
 
-        $sql = "UPDATE user SET 
-        email = '".$inputemail."', 
-        firstname = '".$inputfirstname."', 
-        lastname = '".$inputlastname."'
-        WHERE id='".$userId."' 
-        ";
-    
-        $query=$db->exec($sql);
-        header('Location:/profile');
-
-    // }else{
-    //     echo "Senha Errada";
-    // }
-
+    $query=$db->exec($sql);
+    header('Location:/profile');
 }
 

@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="/dash">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Perfil</a>
+          <a class="nav-link" href="/profile">Perfil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Sair</a>
