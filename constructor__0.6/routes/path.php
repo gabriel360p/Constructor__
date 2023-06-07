@@ -13,6 +13,22 @@ switch ($uri) {
         welcome();
         break;
 
+
+    case '/profile':
+        isGet($method);
+        authenticate(); //verificando se o usário está autenticado
+        include_once __DIR__ . '/../controllers/userController.php';
+        profile();
+        break;
+
+    case '/user/update':
+        isPost($method);
+        authenticate(); //verificando se o usário está autenticado
+        include_once __DIR__ . '/../controllers/userController.php';
+        update();
+        break;
+
+
     case '/dash':
         isGet($method);
         authenticate(); //verificando se o usário está autenticado

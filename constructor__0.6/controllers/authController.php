@@ -55,7 +55,8 @@ function logar()
 function registrar()
 {
     include __DIR__.'/../database/connection.php';
-    $insertUserTable="INSERT INTO user (firstname,lastname,email,password) VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".md5($_POST['password'])."')";
+    $md5password=md5($_POST['password']);
+    $insertUserTable="INSERT INTO user (firstname,lastname,email,password) VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".$md5password."')";
     $db->exec($insertUserTable);
     redirect('/login');
 }

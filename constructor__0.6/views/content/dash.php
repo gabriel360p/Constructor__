@@ -15,33 +15,23 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/dash">Constructor__</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/dash">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Perfil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">Sair</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+
+<?php
+  include_once __DIR__.'/../pieces/content/navbar.php';
+?>
+
 
 <div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">Constructor__0.6</h1>
       <p class="col-md-8 fs-2">Dashboard</p>
-      <p class="col-md-8 fs-5"> Olá <?php echo $_SESSION['user']?> </p>
+      <p class="col-md-8 fs-5"> Olá 
+        <?php 
+        include_once __DIR__.'/../../library/auth.php';
+        $user=authName();
+        echo $user['firstname'];
+          ?>
+       </p>
     </div>
   </div>
 
@@ -52,29 +42,7 @@
 
 
 
-
-
-
-
-
-
-
-  <?php
-    include_once __DIR__.'/../../library/auth.php';
-    $user = authId();
-    echo $user['id'];
-    echo "<br>";
-    $user = authUser();
-    echo $user['firstname'];
-    $user = authUser();
-    echo $user['lastname'];
-    echo "<br>";
-    $user = authEmail();
-    echo $user['email'];
-  ?>
-
-
-
+  
 
 
 

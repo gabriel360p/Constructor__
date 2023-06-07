@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    include_once __DIR__ . '/../pieces/header.php';
+        include_once __DIR__.'/../pieces/welcome/header.php';
     ?>
 
     <div class="text-center">
