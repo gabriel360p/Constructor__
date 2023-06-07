@@ -38,7 +38,7 @@
               class="form-control" required name="firstname" id="" value="<?php 
               include_once __DIR__.'/../../library/auth.php';
                 $username = authName();
-                // echo $username['firstname'];
+                echo $username['firstname'];
               ?>" aria-describedby="helpId" placeholder="">
             <small id="helpId" class="form-text text-muted">Nome do Usuário</small>
           </div>
