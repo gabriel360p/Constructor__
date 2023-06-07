@@ -42,7 +42,7 @@ function authEmail()
     $result = $db->query("SELECT email FROM user WHERE email LIKE '%" . $useremail . "%'");
     $search=$result->fetchArray();
 
-    return $search;
+    return $search['emaill'];
 }
 
 function authId()
