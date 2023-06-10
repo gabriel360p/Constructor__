@@ -30,6 +30,7 @@
         include_once __DIR__.'/../../library/auth.php';
         $user=authName();
         echo $user['firstname'];
+          // authUser();
           ?>
        </p>
     </div>

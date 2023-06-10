@@ -18,6 +18,7 @@ function authUser()
     $result = $db->query("SELECT firstname,lastname,email FROM user WHERE email LIKE '%" . $useremail . "%'");
     $search=$result->fetchArray();
 
+    // var_dump($search);
     return $search;
 }
 
@@ -42,7 +43,7 @@ function authEmail()
     $result = $db->query("SELECT email FROM user WHERE email LIKE '%" . $useremail . "%'");
     $search=$result->fetchArray();
 
-    return $search['emaill'];
+    return $search['email'];
 }
 
 function authId()
