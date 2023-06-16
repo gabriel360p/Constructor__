@@ -1,6 +1,6 @@
 <?php
-include_once __DIR__.'/../library/direction.php';
-include_once __DIR__.'/../library/auth.php';
+// include_once __DIR__.'/../library/direction.php';
+// include_once __DIR__.'/../library/auth.php';
 
 function profile(){
     render('/views/user/profile.php');
