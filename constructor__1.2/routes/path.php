@@ -1,17 +1,19 @@
 <?php
 
+include_once __DIR__ . '/../library/import.php';
+
+
 //informações corrente do servidor
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
 //importação das bibliotecas
-include_once __DIR__ . '/../library/import.php';
 importLibrary('http.php');
 importLibrary('auth.php');
 importLibrary('direction.php');
 
 //importação dos controladores
-importController('userController.php');
+// importController('userController.php');
 importController('authController.php');
 
 
