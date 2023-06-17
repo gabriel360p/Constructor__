@@ -17,7 +17,7 @@
 <body>
 
 <?php
-  include_once __DIR__.'/../pieces/content/navbar.php';
+  importComponent('/content/navbar.php');
 ?>
 
 
