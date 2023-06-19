@@ -21,7 +21,6 @@
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">Constructor__1.2</h1>
                 <p class="col-md-8 fs-4">O constructor é uma simulação de framework</p>
-                <!-- <button class="btn btn-primary btn-lg" type="button">Example button</button> -->
             </div>
         </div>
     </main>
