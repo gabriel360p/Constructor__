@@ -8,26 +8,26 @@ $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
 //importação das bibliotecas
-importLibrary('http.php');
-importLibrary('auth.php');
-importLibrary('direction.php');
-importLibrary('csrf.php');
+importLibrary('http');
+importLibrary('auth');
+importLibrary('direction');
+importLibrary('csrf');
+
 
 //importação dos controladores
-// importController('userController.php');
-importController('authController.php');
+importController('authController');
 
 
 switch ($uri) {
     case '/':
         isGet($method);
-        render('/welcome.php');
+        render('/welcome');
         break;
 
     case '/dash':
         isGet($method);
         authenticate(); //verifican0do se o usário está autenticado
-        render('/content/dash.php');
+        render('/content/dash');
         break;
 
 
@@ -57,6 +57,6 @@ switch ($uri) {
         break;
 
     default:
-        render('/errors/undefined.php');
+        render('/errors/undefined');
         break;
 }

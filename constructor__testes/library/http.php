@@ -2,7 +2,7 @@
 function isGet($method)
 {
     if ($method != 'GET') {
-        render('/errors/badrequest.php');
+        render('/errors/badrequest');
         die();
     }
 }
@@ -10,7 +10,7 @@ function isGet($method)
 function isPost($method)
 {
     if ($method != 'POST') {
-        render('/errors/badrequest.php');
+        render('/errors/badrequest');
         die();
     }
 }

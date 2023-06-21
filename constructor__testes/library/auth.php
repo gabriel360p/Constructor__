@@ -2,7 +2,7 @@
 function authenticate()
 { //verifica se esta logado
     if (!(isset($_SESSION['user']))) {
-        render('/errors/notauthenticate.php');
+        render('/errors/notauthenticate');
         die();
     }
 }
@@ -10,54 +10,57 @@ function authenticate()
 
 function authUser()
 { //puxa todos os dados do usuário logado
-    // $db=connection();
 
-    $result = find("SELECT firstname,lastname,email FROM user WHERE id = '%" . $_SESSION['user'] . "%'");
-    // $search=$result->fetchArray();
+    $user = new User(connection());
+    $data =$user->find("SELECT firstname,lastname,email FROM user WHERE id = '%" . $_SESSION['user'] . "%'");
 
-    return $search;
+    return $data;
 }
 
 
 function authName()
 { //puxa o nome do usuário logado
-    // $db=connection();
 
-    $search = find("SELECT firstname,lastname FROM user WHERE id = " .  $_SESSION['user']. " ");
+    $user = new User(connection());
+
+
+    $data =$user->find("SELECT firstname,lastname FROM user WHERE id = " .  $_SESSION['user']. " ");
     // $search=$result->fetchArray();
 
-    return $search;
+    return $data['firstname'];
 }
 
 
 function authEmail()
 { //puxa o email do usuário logado
-    // $db=connection();
+    $user = new User(connection());
 
-    $search=find("SELECT email FROM user WHERE id = '%" .$_SESSION['user']. "%'");
+
+    $data =$user->find("SELECT email FROM user WHERE id = '%" .$_SESSION['user']. "%'");
     // $search=$result->fetchArray();
 
-    return $search['email'];
+    return $data['email'];
 }
 
 function authId()
 { //puxa o id do usuário logado
-    // $db=connection();
+    $user = new User(connection());
 
-    $search = find("SELECT id FROM user WHERE email = '%" . $_SESSION['user'] . "%'");
+
+    $data =$user->find("SELECT id FROM user WHERE email = '%" . $_SESSION['user'] . "%'");
     // $search=$result->fetchArray();
 
-    return $search['id'];
+    return $data['id'];
 }
 
 function authPassword()
 { //puxa o id do usuário logado
     // $db=connection();
 
-    $search =find("SELECT password FROM user WHERE id = '%" .  $_SESSION['user'] . "%'");
-    // $search=$result->fetchArray();
+    // $search =find("SELECT password FROM user WHERE id = '%" .  $_SESSION['user'] . "%'");
+    // // $search=$result->fetchArray();
 
-    return $search['password'];
+    // return $search['password'];
 }
 
 
@@ -66,10 +69,10 @@ function confirmedPassword($password)
 
     // $db=connection();
 
-    $search = find("SELECT password FROM user WHERE id = '%" . $_SESSION['user'] . "%'");
-    // $search=$result->fetchArray();
+    // $search = find("SELECT password FROM user WHERE id = '%" . $_SESSION['user'] . "%'");
+    // // $search=$result->fetchArray();
 
-    if($password!=$search['password']){
-        echo "falha  na confirmação de senha";
-    }
+    // if($password!=$search['password']){
+    //     echo "falha  na confirmação de senha";
+    // }
 }

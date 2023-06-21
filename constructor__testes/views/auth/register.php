@@ -27,7 +27,7 @@
                 <div class="col">
                     <form action="/registrar" method="POST">
                         <?php
-                            csrfAuthenticate();
+                            // csrfAuthenticate();
                         ?>
                         <div class="mb-3">
                             <label for="" class="form-label">Email</label>

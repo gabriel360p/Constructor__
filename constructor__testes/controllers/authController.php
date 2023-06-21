@@ -2,12 +2,12 @@
 
 function login()
 {
-    render('/auth/login.php');
+    render('/auth/login');
 }
 
 function register()
 {
-    render('/auth/register.php');
+    render('/auth/register');
 }
 
 function logout()
@@ -25,30 +25,29 @@ function logout()
 
 function logar()
 {
-    csrfVerify();
+    // csrfVerify();
 
-    // $db=connection();
+    $user=new User(connection());
 
-    // $search=find("SELECT * FROM user WHERE email LIKE '%" . $_POST['email'] . "%'");
+    $data=$user->find("SELECT * FROM user WHERE email LIKE '%" . $_POST['email'] . "%'");
 
-    // if((password_verify($_POST['password'],$search['password'])==true)&&($_POST['email']==$search['email'])){
-    //     $_SESSION['user']=$search['id'];
-    //     redirect('/dash');
-    // }else{
-    //     redirect('/login');
-    // }
+    if((password_verify($_POST['password'],$data['password'])==true)&&($_POST['email']==$data['email'])){
+        $_SESSION['user']=$data['id'];
+        redirect('/dash');
+    }else{
+        redirect('/login');
+    }
     
 }
     
 function registrar()
 {
-    csrfVerify();
-
-    $db=connection();
+    // csrfVerify();
+    $user = new User(connection());
 
     $md5password=password_hash($_POST['password'],PASSWORD_DEFAULT);
 
-    save("INSERT INTO 
+    $user->save("INSERT INTO 
         user (firstname,lastname,email,password) 
         VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".$md5password."')");
     redirect('/login');

@@ -17,7 +17,7 @@
 <body>
 
 <?php
-  importComponent('/content/navbar.php');
+  importComponent('/content/navbar');
 ?>
 
 
@@ -27,8 +27,7 @@
       <p class="col-md-8 fs-2">Dashboard</p>
       <p class="col-md-8 fs-5"> Olá 
         <?php 
-          $user=authName();
-          echo $user['firstname'];
+          echo authName();
         ?>
        </p>
     </div>

@@ -2,7 +2,7 @@
 
 function render($route)
 {
-    include_once __DIR__ . '/../views' . $route;
+    include_once __DIR__ . '/../views' . $route.'.php';
     die();
 }
 
