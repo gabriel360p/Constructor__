@@ -1,77 +1,52 @@
 <?php
-function authenticate()
-{ //verifica se esta logado
-    if (!(isset($_SESSION['user']))) {
-        render('/errors/notauthenticate');
-        die();
+
+class Auth{
+
+    public static function userName()
+    {
+        $user = new User(connection());
+
+        $data =$user->find("SELECT firstname,lastname FROM user WHERE id = " .  $_SESSION['user']. " ");
+
+        return $data['firstname'];
     }
-}
 
 
-function authUser()
-{ //puxa todos os dados do usuário logado
+    public static function userId()
+    {
+        $user = new User(connection());
 
-    $user = new User(connection());
-    $data =$user->find("SELECT firstname,lastname,email FROM user WHERE id = '%" . $_SESSION['user'] . "%'");
+        $data =$user->find("SELECT id FROM user WHERE email = '%" . $_SESSION['user'] . "%'");
 
-    return $data;
-}
-
-
-function authName()
-{ //puxa o nome do usuário logado
-
-    $user = new User(connection());
+        return $data['id'];
+    }
 
 
-    $data =$user->find("SELECT firstname,lastname FROM user WHERE id = " .  $_SESSION['user']. " ");
-    // $search=$result->fetchArray();
+    public static function userAuth()
+    {
+        $user = new User(connection());
+        
+        $data =$user->find("SELECT firstname,lastname,email FROM user WHERE id = '%" . $_SESSION['user'] . "%'");
 
-    return $data['firstname'];
-}
+        return $data;
+    }
 
+    public static function userEmail()
+    {
+        $user = new User(connection());
 
-function authEmail()
-{ //puxa o email do usuário logado
-    $user = new User(connection());
+        $data =$user->find("SELECT email FROM user WHERE id = '%" .$_SESSION['user']. "%'");
 
-
-    $data =$user->find("SELECT email FROM user WHERE id = '%" .$_SESSION['user']. "%'");
-    // $search=$result->fetchArray();
-
-    return $data['email'];
-}
-
-function authId()
-{ //puxa o id do usuário logado
-    $user = new User(connection());
+        return $data['email'];
+    }
 
 
-    $data =$user->find("SELECT id FROM user WHERE email = '%" . $_SESSION['user'] . "%'");
-    // $search=$result->fetchArray();
+    public static function authenticate(){
 
-    return $data['id'];
-}
+        if (!(isset($_SESSION['user']))) {
+            render('/errors/notauthenticate');
+            die();
+        }
+    }
 
-function authPassword()
-{ //puxa o id do usuário logado
-    $user = new User(connection());
-
-    $data=$user->find("SELECT password FROM user WHERE id = '%" .  $_SESSION['user'] . "%'");
-
-    return $data['password'];
-}
-
-
-function confirmedPassword($password)
-{//este método é válido apenas para verificar a senha do user logado
-
-    // $db=connection();
-
-    // $search = find("SELECT password FROM user WHERE id = '%" . $_SESSION['user'] . "%'");
-    // // $search=$result->fetchArray();
-
-    // if($password!=$search['password']){
-    //     echo "falha  na confirmação de senha";
-    // }
 }

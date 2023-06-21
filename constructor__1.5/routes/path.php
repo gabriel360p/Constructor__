@@ -26,7 +26,8 @@ switch ($uri) {
 
     case '/dash':
         isGet($method);
-        authenticate(); //verifican0do se o usário está autenticado
+        // authenticate();
+        Auth::authenticate();//verificando se o usário está autenticado
         render('/content/dash');
         break;
 
