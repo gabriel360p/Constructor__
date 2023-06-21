@@ -28,6 +28,8 @@
       <p class="col-md-8 fs-5"> Olá 
         <?php 
           echo authName();
+
+          // User::update();//chamada de método estático - métodos estáticos são métodos que podem ser chamados sem a necessidade de instanciar objetos
         ?>
        </p>
     </div>

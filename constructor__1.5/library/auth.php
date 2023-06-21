@@ -55,12 +55,11 @@ function authId()
 
 function authPassword()
 { //puxa o id do usuário logado
-    // $db=connection();
+    $user = new User(connection());
 
-    // $search =find("SELECT password FROM user WHERE id = '%" .  $_SESSION['user'] . "%'");
-    // // $search=$result->fetchArray();
+    $data=$user->find("SELECT password FROM user WHERE id = '%" .  $_SESSION['user'] . "%'");
 
-    // return $search['password'];
+    return $data['password'];
 }
 
 

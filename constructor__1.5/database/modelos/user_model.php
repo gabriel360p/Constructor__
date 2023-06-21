@@ -21,7 +21,11 @@ class User{
         return $find->fetchArray();
     }
 
-    public function update(){
-
+    public function update($sql){
     }
+
+
+    // public static function exemplo(){//a declaração static dá o método a capacidade de ser chamado sem precisar ter sua classe instanciada
+    //     echo "atualizado";
+    // }
 }
