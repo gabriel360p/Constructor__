@@ -17,19 +17,12 @@
 <body>
 
 <?php
-  importComponent('/content/navbar');
+  Import::importComponent('/content/navbar');
 ?>
 
-
-<div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-      <h1 class="display-5 fw-bold">Constructor__1.2</h1>
-      <p class="col-md-8 fs-2">Dashboard</p>
-      <p class="col-md-8 fs-5"> Olá 
-        <?php 
-            echo Auth::userName();
-        ?>
-       </p>
+<div class="p-3 mb-2 bg-light rounded-3 bg-white">
+  <div class="container-fluid py-3">
+      <img src="<?php Storage::importImage('constructor__.png'); ?>" alt="">        
     </div>
   </div>
 

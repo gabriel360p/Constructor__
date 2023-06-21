@@ -11,5 +11,5 @@ $conn=connection();
 $createUserTable = "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY NOT NULL,email STRING UNIQUE, firstname STRING, lastname STRING, password STRING)";
 $conn->exec($createUserTable);
 
-$createCSRFtable= "CREATE TABLE IF NOT EXISTS csrf (id INTEGER PRIMARY KEY NOT NULL, code TEXT UNIQUE, open BOOLEAN)";
-$conn->exec($createCSRFtable);
+// $createCSRFtable= "CREATE TABLE IF NOT EXISTS csrf (id INTEGER PRIMARY KEY NOT NULL, code TEXT UNIQUE, open BOOLEAN)";
+// $conn->exec($createCSRFtable);
