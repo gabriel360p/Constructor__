@@ -25,6 +25,8 @@
 
       <img src="<?php Storage::importImage('constructor__.png'); ?>" alt="">        
 
+      <?php  ?>
+
     </div>
   </div>
 

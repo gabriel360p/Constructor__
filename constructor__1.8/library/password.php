@@ -7,8 +7,10 @@ class Password{
         /*
             A função recebe a senha e o tamanho que deseja que ela tenha e faz verificação se o tamanho esta nos conformes
         */
+        if(mb_strlen($password)<$size){
+            return print "A senha precisa ter no mínimo $size caracteres";
+        }
 
-        
     }
 
     public static function confirmedPassword($password,$password_confirmation)
