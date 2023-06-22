@@ -2,6 +2,15 @@
 
 class Password{
 
+    public static function sizePassword($size,$password)
+    {
+        /*
+            A função recebe a senha e o tamanho que deseja que ela tenha e faz verificação se o tamanho esta nos conformes
+        */
+
+        
+    }
+
     public static function confirmedPassword($password,$password_confirmation)
     {
         /*
