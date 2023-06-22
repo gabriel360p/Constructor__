@@ -8,7 +8,7 @@ class Auth{
 
         $data =$user->find("SELECT firstname,lastname FROM user WHERE id = " .  $_SESSION['user']. " ");
 
-        return $data['firstname'];
+        return $data;
     }
 
 
@@ -16,7 +16,7 @@ class Auth{
     {
         $user = new User(connection());
 
-        $data =$user->find("SELECT id FROM user WHERE email = '%" . $_SESSION['user'] . "%'");
+        $data =$user->find("SELECT id FROM user WHERE id =" . $_SESSION['user'] . "");
 
         return $data['id'];
     }
@@ -26,7 +26,7 @@ class Auth{
     {
         $user = new User(connection());
         
-        $data =$user->find("SELECT firstname,lastname,email FROM user WHERE id = '%" . $_SESSION['user'] . "%'");
+        $data =$user->find("SELECT * FROM user WHERE id = " . $_SESSION['user'] . "");
 
         return $data;
     }
@@ -35,11 +35,19 @@ class Auth{
     {
         $user = new User(connection());
 
-        $data =$user->find("SELECT email FROM user WHERE id = '%" .$_SESSION['user']. "%'");
-
+        $data = $user->find("SELECT email FROM user WHERE id = " .$_SESSION['user']. "");
+        
         return $data['email'];
     }
 
+    public static function userPassword()
+    {
+        $user = new User(connection());
+
+        $data = $user->find("SELECT password FROM user WHERE id = " .$_SESSION['user']. "");
+        
+        return $data['password'];
+    }
 
     public static function authenticate(){
 

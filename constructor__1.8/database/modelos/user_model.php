@@ -19,6 +19,7 @@ class User{
     public function find($sql){
         $find=$this->conn->query($sql);
         return $find->fetchArray();
+
     }
 
     public function update($sql){

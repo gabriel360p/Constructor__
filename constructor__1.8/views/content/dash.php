@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>DASHBOARD</title>
+  <title>Dashboard</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,22 +22,11 @@
 
 <div class="p-3 mb-2 bg-light rounded-3 bg-white">
   <div class="container-fluid py-3">
+
       <img src="<?php Storage::importImage('constructor__.png'); ?>" alt="">        
+
     </div>
   </div>
-
-
-
-
-
-
-
-
-  
-
-
-
-
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

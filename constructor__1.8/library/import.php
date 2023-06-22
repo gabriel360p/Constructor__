@@ -17,7 +17,7 @@ class Import{
         include_once __DIR__ . '/../database/modelos/'.$model.'.php';
     }
     
-    public function importUniversal($import){
-        include_once __DIR__ . '/..'.$import.'.php';
-    }
+    // public function importUniversal($import){
+    //     include_once __DIR__ . '/..'.$import.'.php';
+    // }
 }

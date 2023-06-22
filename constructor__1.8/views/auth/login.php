@@ -28,7 +28,7 @@
                 <div class="col">
                     <form action="/logar" method="POST">
                         <?php
-                            csrfAuthenticate();
+                            // csrfAuthenticate();
                         ?>
                         <div class="mb-3">
                             <label for="" class="form-label">Email</label>

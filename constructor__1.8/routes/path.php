@@ -15,8 +15,18 @@ switch ($uri) {
         Direction::render('/content/dash');
         break;
 
+    // User
+    case '/users/user':
+        Http::isGet($method);
+        Auth::authenticate();
+        userController::profile();
+        break;
+
+        
+    // ------------------------------- 
 
     // Autenticação
+
     case '/login':
         Http::isGet($method); 
         authController::login();

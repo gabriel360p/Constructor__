@@ -1,5 +1,12 @@
  <?php
 
+class userController{
+    public static function profile()
+    {
+        Direction::render('/user/profile');
+    }
+}
+
 // function profile(){
 //     render('user/profile.php');
 // }
