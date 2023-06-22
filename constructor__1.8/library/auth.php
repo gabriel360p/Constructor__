@@ -52,8 +52,7 @@ class Auth{
     public static function authenticate(){
 
         if (!(isset($_SESSION['user']))) {
-            Direction::render('/errors/notauthenticate');
-            die();
+            return Direction::render('/errors/notauthenticate');
         }
     }
 

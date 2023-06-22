@@ -3,14 +3,12 @@ class Direction{
     
     public static function render($route)
     {
-        include_once __DIR__ . '/../views' . $route.'.php';
-        die();
+        return include_once __DIR__ . '/../views' . $route.'.php';
     }
     
     public static function redirect($route)
     {
-        header('Location:' . $route);
-        die();
+        return header('Location:' . $route);
     }
 
 }

@@ -3,7 +3,7 @@
 class userController{
     public static function profile()
     {
-        Direction::render('/user/profile');
+        return Direction::render('/user/profile');
     }
 }
 

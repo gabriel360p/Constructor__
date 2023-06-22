@@ -9,7 +9,7 @@ class Password{
         */
         
         if($password_confirmation!=$password){
-            return "As senhas não são iguais";
+            return print "As senhas não são iguais";
         }
 
     }
@@ -22,7 +22,7 @@ class Password{
         */
 
         if(!(password_verify($password,Auth::userPassword()))){
-            return "Falha na verificação de senha";
+            return print "Falha na verificação de senha";
         }
     }
 }

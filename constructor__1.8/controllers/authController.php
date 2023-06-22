@@ -3,12 +3,12 @@ class authController{
 
     public static function login()
     {
-        Direction::render('/auth/login');
+        return Direction::render('/auth/login');
     }
     
     public static function register()
     {
-        Direction::render('/auth/register');
+        return Direction::render('/auth/register');
     }
     
     public static function logout()
@@ -18,9 +18,9 @@ class authController{
             session_destroy();
             setcookie("PHPSESSID",null,strtotime("-36000 seconds"));
     
-            Direction::redirect('/');
+            return Direction::redirect('/');
         }else{
-            Direction::redirect('/');
+            return Direction::redirect('/');
         }
     }
     
@@ -34,9 +34,9 @@ class authController{
     
         if((password_verify($_POST['password'],$data['password'])==true)&&($_POST['email']==$data['email'])){
             $_SESSION['user']=$data['id'];
-            Direction::redirect('/dash');
+            return Direction::redirect('/dash');
         }else{
-            Direction::redirect('/login');
+            return Direction::redirect('/login');
         }
         
     }
@@ -51,7 +51,7 @@ class authController{
         $user->save("INSERT INTO 
             user (firstname,lastname,email,password) 
             VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".$md5password."')");
-        Direction::redirect('/login');
+        return Direction::redirect('/login');
     }
 }
 
