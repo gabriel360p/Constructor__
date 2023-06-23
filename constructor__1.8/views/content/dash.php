@@ -25,7 +25,7 @@
 
       <img src="<?php Storage::importImage('constructor__.png'); ?>" alt="">        
 
-      <?php  ?>
+      <?php //var_dump($_SERVER['REQUEST_URI']);  ?>
 
     </div>
   </div>

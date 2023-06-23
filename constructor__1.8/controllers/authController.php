@@ -36,6 +36,9 @@ class authController{
             $_SESSION['user']=$data['id'];
             return Direction::redirect('/dash');
         }else{
+            
+            ErrorsBag::loginError();//capturando um possível erro
+
             return Direction::redirect('/login');
         }
         

@@ -48,6 +48,17 @@
             </div>
         </div>
 
+        <div class="text-center">
+
+        <?php
+        
+            if($errors = ErrorsBag::viewError('Login')){//imprimindo possíveis erros
+                print $errors;
+            }
+            
+        ?>
+        </div>
+
     </main>
     <footer>
         <!-- place footer here -->

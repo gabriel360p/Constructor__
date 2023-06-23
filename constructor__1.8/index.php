@@ -12,6 +12,7 @@ Import::importLibrary('direction');
 Import::importLibrary('csrf');
 Import::importLibrary('storage');
 Import::importLibrary('password');
+Import::importLibrary('error');
 
 //importação dos controladores
 Import::importController('authController');
@@ -19,6 +20,7 @@ Import::importController('userController');
 
 //importando modelos
 Import::importModel('user_model');
+Import::importModel('error_model');
 Import::importModel('csrf_model');
 
 
