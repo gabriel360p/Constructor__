@@ -13,6 +13,10 @@ Import::importLibrary('csrf');
 Import::importLibrary('storage');
 Import::importLibrary('password');
 Import::importLibrary('error');
+Import::importLibrary('request');
+
+//inicializando objetos do framework
+// $request = new Request($_REQUEST);
 
 //importação dos controladores
 Import::importController('authController');

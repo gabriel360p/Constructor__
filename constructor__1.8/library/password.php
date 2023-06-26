@@ -2,11 +2,21 @@
 
 class Password{
 
+    public static function registerPassword($size,$password)
+    {
+        /*
+            Módulo de cadastro de senha, ele deve verifcar o tamanho e confirmar se as duas senhas são iguais
+        */
+                
+    }
+
+
     public static function sizePassword($size,$password)
     {
         /*
             A função recebe a senha e o tamanho que deseja que ela tenha e faz verificação se o tamanho esta nos conformes
         */
+
         if(mb_strlen($password)<$size){
             print "A senha precisa ter no mínimo $size caracteres";
             return die();
@@ -21,7 +31,9 @@ class Password{
         */
         
         if($password_confirmation!=$password){
-            print "As senhas não são iguais";
+            // print "As senhas não são iguais";
+            ErrorsBag::customError("As senhas digitadas não são iguais","NotConfirmation","/login");
+
             return die();
         }
 

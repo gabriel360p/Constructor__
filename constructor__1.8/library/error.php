@@ -8,6 +8,7 @@ class ErrorsBag {
     {
         /*
             A captura de erros customizados, permite que o usuário defina uma mensagem personalizada, o tipo de erro customizado (palavra chave) e uma rota
+            A captura de erros não utiliza lógica, ele deve somente capturar a mensagem de erro e o tipo de erro
         */
 
         $storage = new Errors(connection());
@@ -17,22 +18,32 @@ class ErrorsBag {
     }
 
 
-    public static function loginError()
+    public static function registerError()
     {
         /*
-            A captura do error de login
+            A captura do error de registro - O erro que ele captura é que os dados já existem no banco
         */
 
         $storage = new Errors(connection());
-        $storage->save($errorMessage="Dados Invalidos",$errorType="Login");
+        $storage->save($errorMessage="Usuário não encontrado",$errorType="Login");
         
         return Direction::redirect('/login');
     }
+    public static function loginError()
+    {
+        /*
+            A captura do error de login - Usuário não encontrado no banco de dados
+        */
 
+        $storage = new Errors(connection());
+        $storage->save($errorMessage="Usuário não encontrado",$errorType="Login");
+        
+        return Direction::redirect('/login');
+    }
     public static function emailError()
     {
         /*
-            A captura do error de email
+            Captura erro de escrita do email
         */
 
         $storage = new Errors(connection());
@@ -40,18 +51,19 @@ class ErrorsBag {
 
         return Direction::redirect('/login');
     }
-    
     public static function passwordError()
     {
         /*
-            A captura do error de senha
+            A captura todos os erros vindo em relação a senha
         */
 
         $storage = new Errors(connection());
-        $storage->save("Senha Invalido","Password");
+        $storage->save("Senha Invalida","Password");
         
         return Direction::redirect('/login');
     }
+
+
 
     // public static function viewAll()
     // {
@@ -66,6 +78,16 @@ class ErrorsBag {
     //         return;
     //     }
     // }
+
+
+
+
+
+
+
+
+
+
 
 
     public static function viewError($errorType)
