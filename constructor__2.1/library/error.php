@@ -4,6 +4,7 @@ class ErrorsBag {
     protected $errorMessage;
     protected $errorType;
 
+    // Gerencia erros customizados
     public static function customError($errorMessage,$errorType,$path)
     {
         /*  
@@ -20,7 +21,7 @@ class ErrorsBag {
 
 
 
-
+    // Gerencia erros referenciados a registro
     public static function registerError($errorMessage,$errorType)
     {
         /*
@@ -33,11 +34,13 @@ class ErrorsBag {
         
         return Direction::redirect('/register');
     }
+
+    // Gerencia erros referenciados a login
     public static function loginError($errorMessage,$errorType)
     {
         /*
             A captura do error de login 
-            Essa função é específica para capturar erros genéricos da tela de login de usuário
+            Essa função é específica para capturar erros genéricos da tela de login de usuário como erro em encontrar emails e senha
         */
 
         $storage = new Errors(connection());
@@ -47,10 +50,7 @@ class ErrorsBag {
     }
 
 
-
-
-
-
+    // Gerencia erros de senha
     public static function passwordError($errorMessage,$errorType,$path)
     {
         /*
@@ -71,7 +71,6 @@ class ErrorsBag {
     {
         /*
             Mostra um erro especifico, ele pega como referência de o tipo de erro que foi definido
-            Ele captura o erro, insere, armaneza em uma variável corrente e depois deleta, o valor que vai ser mostrado ao usuário é o da varáivel corrente, o valor original foi deletado do banco 
         */
 
         $storage = new Errors(connection());
@@ -83,13 +82,15 @@ class ErrorsBag {
             
             $storage->delete($errorMessage['id']);
 
-            return "Erro! ".$errorMessage['errorMessage']." Tipo de erro: ".$errorMessage['errorType'];
+            echo "<p>";
+                echo  $errorMessage['errorMessage']." Tipo de erro: ".$errorMessage['errorType'];
+            echo "</p>";
+            return true;
         }else{
-            return;
+            return false;
         }
 
     }
-
 
 
 

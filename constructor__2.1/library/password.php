@@ -27,4 +27,20 @@ class Password{
             return die();
         }
     }
+
+        // public static function modulePassword($size,$password,$password_confirmation,$message,$errorType,$path)
+    // {
+    //     /* 
+    //         O módulo é específico para registro de senha
+    //     */
+
+    //     if((mb_strlen($password)<$size)){
+    //         ErrorsBag::passwordError($message,$errorType,$path);
+    //         return die();
+    //     }else if($password_confirmation!=$password){
+    //         ErrorsBag::passwordError($message,$errorType,$path);
+    //         return die();
+    //     }
+    // }
+    
 }

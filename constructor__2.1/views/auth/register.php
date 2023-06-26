@@ -60,28 +60,16 @@
                             <small id="helpId" class="form-text text-muted">Repita a senha para confirmar</small>
                         </div>
 
+                        <div class="text-center">
 
-                        <?php
-                            if($errors = ErrorsBag::viewError('sizePassword')){//imprimindo possíveis erros
-                                echo "
-                                    <small>
-                                        <br>
-                                        $errors
-                                        <br>
-                                    </small>
-                                ";
-                            }
-                            if($errors = ErrorsBag::viewError('password_confirmation')){//imprimindo possíveis erros
-                                echo "
-                                    <small>
-                                        $errors
-                                        <br>
-                                    </small>
-                                ";
-                            }
-                        ?>
+                            <?php
+                                //imprimindo erros relacionado a senha
+                                ErrorsBag::viewError('SizePassword');
+                                ErrorsBag::viewError('password_confirmation');
+                            ?>
 
-
+                        </div>
+                        
                         <button class="btn btn-outline-primary">Cadastrar</button>
                     </form>
                 </div>

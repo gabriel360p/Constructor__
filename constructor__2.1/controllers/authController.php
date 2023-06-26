@@ -53,7 +53,7 @@ class authController{
     
         Password::confirmedPassword($_POST['password'],$_POST['password_confirmation'],"As senhas não conferem","password_confirmation","/register");
 
-        Password::sizePassword(8,$_POST['password'],"A senha precisa ter no minimo 8 caracteres","sizePassword","/login");
+        Password::sizePassword(8,$_POST['password'],"A senha precisa ter no minimo 8 caracteres","sizePassword","/register");
 
         $md5password=password_hash($_POST['password'],PASSWORD_DEFAULT);
     
