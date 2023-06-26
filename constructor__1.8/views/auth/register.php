@@ -53,6 +53,35 @@
                             <small id="helpId" class="form-text text-muted">Entre com a senha</small>
                         </div>
 
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Confirmar Senha</label>
+                            <input type="password" class="form-control" name="password_confirmation" required id="" aria-describedby="helpId" placeholder="">
+                            <small id="helpId" class="form-text text-muted">Repita a senha para confirmar</small>
+                        </div>
+
+
+                        <?php
+                            if($errors = ErrorsBag::viewError('sizePassword')){//imprimindo possíveis erros
+                                echo "
+                                    <small>
+                                        <br>
+                                        $errors
+                                        <br>
+                                    </small>
+                                ";
+                            }
+                            if($errors = ErrorsBag::viewError('password_confirmation')){//imprimindo possíveis erros
+                                echo "
+                                    <small>
+                                        $errors
+                                        <br>
+                                    </small>
+                                ";
+                            }
+                        ?>
+
+
                         <button class="btn btn-outline-primary">Cadastrar</button>
                     </form>
                 </div>

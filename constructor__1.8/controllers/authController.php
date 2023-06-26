@@ -32,14 +32,16 @@ class authController{
     
         $data=$user->find("SELECT * FROM user WHERE email LIKE '%" . $_POST['email'] . "%'");
     
-        if((password_verify($_POST['password'],$data['password'])==true)&&($_POST['email']==$data['email'])){
-            $_SESSION['user']=$data['id'];
-            return Direction::redirect('/dash');
-        }else{
-            
-            ErrorsBag::loginError();//capturando um possível erro
+        if($data){
+            if(password_verify($_POST['password'],$data['password'])==true){
+                $_SESSION['user']=$data['id'];
+                return Direction::redirect('/dash');
+            }else{
+                ErrorsBag::loginError("Senha Errada","Password");//capturando um possível erro
 
-            return Direction::redirect('/login');
+            }
+        }else{
+            ErrorsBag::loginError("Email não encontrado","Email");//capturando um possível erro
         }
         
     }
@@ -49,6 +51,10 @@ class authController{
         // csrfVerify();
         $user = new User(connection());
     
+        Password::confirmedPassword($_POST['password'],$_POST['password_confirmation'],"As senhas não conferem","password_confirmation","/register");
+
+        Password::sizePassword(8,$_POST['password'],"A senha precisa ter no minimo 8 caracteres","sizePassword","/login");
+
         $md5password=password_hash($_POST['password'],PASSWORD_DEFAULT);
     
         $user->save("INSERT INTO 

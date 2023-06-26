@@ -2,52 +2,29 @@
 
 class Password{
 
-    public static function registerPassword($size,$password)
-    {
-        /*
-            Módulo de cadastro de senha, ele deve verifcar o tamanho e confirmar se as duas senhas são iguais
-        */
-                
-    }
-
-
-    public static function sizePassword($size,$password)
+    public static function sizePassword($size,$password,$message,$errorType,$path)
     {
         /*
             A função recebe a senha e o tamanho que deseja que ela tenha e faz verificação se o tamanho esta nos conformes
+            Ela recebe também dados para complementar a bolsa de erros, como mensagem, tipo de erro e caminho
         */
 
         if(mb_strlen($password)<$size){
-            print "A senha precisa ter no mínimo $size caracteres";
+            ErrorsBag::passwordError($message,$errorType,$path);
             return die();
         }
-
     }
 
-    public static function confirmedPassword($password,$password_confirmation)
+    public static function confirmedPassword($password,$password_confirmation,$message,$errorType,$path)
     {
         /*
             A função recebe as senhas via passagem de método e verifica se é as duas strings são iguais
+            Ela recebe também dados para complementar a bolsa de erros, como mensagem, tipo de erro e caminho
         */
         
         if($password_confirmation!=$password){
-            // print "As senhas não são iguais";
-            ErrorsBag::customError("As senhas digitadas não são iguais","NotConfirmation","/login");
-
+            ErrorsBag::passwordError($message,$errorType,$path);
             return die();
-        }
-
-    }
-
-
-    public static function passwordVerification($password)
-    {
-        /*
-            A função recebe a senha via passagem de método e verifica se é a mesma senha do usuário logado
-        */
-
-        if(!(password_verify($password,Auth::userPassword()))){
-            return print "Falha na verificação de senha";
         }
     }
 }
