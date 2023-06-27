@@ -26,9 +26,6 @@
             <div class="row">
                 <div class="col">
                     <form action="/registrar" method="POST">
-                        <?php
-                            // csrfAuthenticate();
-                        ?>
                         <div class="mb-3">
                             <label for="" class="form-label">Email</label>
                             <input type="email" class="form-control" required name="email" id="" aria-describedby="helpId" placeholder="">

@@ -28,19 +28,19 @@ class Password{
         }
     }
 
-        // public static function modulePassword($size,$password,$password_confirmation,$message,$errorType,$path)
-    // {
-    //     /* 
-    //         O módulo é específico para registro de senha
-    //     */
+        public static function modulePassword($size,$password,$password_confirmation,$errorType,$path)
+    {
+        /* 
+            O módulo é específico para registro de senha
+        */
 
-    //     if((mb_strlen($password)<$size)){
-    //         ErrorsBag::passwordError($message,$errorType,$path);
-    //         return die();
-    //     }else if($password_confirmation!=$password){
-    //         ErrorsBag::passwordError($message,$errorType,$path);
-    //         return die();
-    //     }
-    // }
+        if((mb_strlen($password)<$size)){
+            ErrorsBag::passwordError("A senha precisa ter no minimo $size de caracteres",$errorType,$path);
+            return die();
+        }else if($password_confirmation!=$password){
+            ErrorsBag::passwordError("As senhas não são iguais",$errorType,$path);
+            return die();
+        }
+    }
     
 }

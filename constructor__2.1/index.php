@@ -1,7 +1,7 @@
 <?php
 session_start(); //inicia a sessão
 
-include_once __DIR__ . '/library/import.php';//
+include_once __DIR__ . '/library/import.php';//Importa a biblioteca de importações
 
 include_once __DIR__ . '/database/connection.php'; //inicia o banco de dados
 
@@ -13,7 +13,6 @@ Import::importLibrary('csrf');
 Import::importLibrary('storage');
 Import::importLibrary('password');
 Import::importLibrary('error');
-Import::importLibrary('request');
 
 //importação dos controladores
 Import::importController('authController');

@@ -21,7 +21,11 @@
 
 
 
-    <form action="/teste" method="POST">
+    <!-- <form action=" <?php /* route('/users/user/edit/', $parametros=["teste"=>1,"teste2"=>4])*/  ?>" method="POST"> -->
+      
+    <form action="/users/user/edit/" method="POST">
+        <input type="hidden" name="userId" value="1">
+
         <div class="mb-3">
           <label for="" class="form-label">Email</label>
           <input type="text"

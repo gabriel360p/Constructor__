@@ -26,8 +26,6 @@ class authController{
     
     public static function logar()
     {
-        // csrfVerify();
-    
         $user=new User(connection());
     
         $data=$user->find("SELECT * FROM user WHERE email LIKE '%" . $_POST['email'] . "%'");
@@ -48,7 +46,6 @@ class authController{
         
     public static function registrar()
     {
-        // csrfVerify();
         $user = new User(connection());
     
         Password::confirmedPassword($_POST['password'],$_POST['password_confirmation'],"As senhas não conferem","password_confirmation","/register");
