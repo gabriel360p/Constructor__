@@ -10,11 +10,8 @@ switch ($uri) {
         break;
     
 
-    case '/users/user/edit/':
-
-        echo "OLA";
-        echo $_POST['userId']; 
-
+    case '/te':
+        include __DIR__.'/testes.php';
         break;
 
 
@@ -23,26 +20,3 @@ switch ($uri) {
         break;
 }
 
-// function route($uri = "",$parametros = []){
-//     //iria construir a uri e iria redirecionar para ela
-
-//     $teste = http_build_query($parametros);
-    
-//     // echo $uri;
-
-//     // $uri.$parametros[];
-//     $id=1;
-    
-//     echo '/users/user/edit/'.$id;
-
-
-//     // $path=$uri.$teste;
-//     // header("Location:".$uri);
-//     // roteamento($path);
-// }
-
-// route($uri,$parametros);
-
-// function roteamento($path){
-//     echo $path;
-// }

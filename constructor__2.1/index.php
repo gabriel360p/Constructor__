@@ -9,7 +9,6 @@ include_once __DIR__ . '/database/connection.php'; //inicia o banco de dados
 Import::importLibrary('http');
 Import::importLibrary('auth');
 Import::importLibrary('direction');
-Import::importLibrary('csrf');
 Import::importLibrary('storage');
 Import::importLibrary('password');
 Import::importLibrary('error');
@@ -21,7 +20,6 @@ Import::importController('userController');
 //importando modelos
 Import::importModel('user_model');
 Import::importModel('error_model');
-Import::importModel('csrf_model');
 
 
 
