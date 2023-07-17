@@ -12,7 +12,12 @@ class Guard{
         $conn = connection();    
         $user = new User($conn);
         $data=$user->find("SELECT * FROM user WHERE id = '{$_SESSION['user']}' ");
-        return $data['access'] === 0 ? true : Direction::redirect('/errors/unauthorized');
+
+        if($data['access'] != 0){//testo se o usuário é admin, se  for ele passa direto, se não for, ele é barrado. 
+            Direction::render('/errors/unauthorized');
+            die();
+        }
+
     }
 
 }

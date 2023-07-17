@@ -12,6 +12,7 @@ switch ($uri) {
     case '/dash':
         Http::isGet($method);
         Auth::authenticate();//verificando se o usário está autenticado
+        Guard::isAdmin();       
         Direction::render('/content/dash');
         break;
 
@@ -52,6 +53,21 @@ switch ($uri) {
     case '/errors/unauthorized':
         Http::isGet($method);
         errorController::unauthorized();
+        break;
+
+    case '/errors/badrequest':
+        Http::isGet($method);
+        errorController::badrequest();
+        break;
+
+    case '/errors/undefined':
+        Http::isGet($method);
+        errorController::undefined();
+        break;
+
+    case '/errors/notauthenticate':
+        Http::isGet($method);
+        errorController::notauthenticate();
         break;
 
     // ------------------------------- 

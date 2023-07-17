@@ -1,5 +1,4 @@
 <?php
-
 class User{
     protected $conn;
 
@@ -15,13 +14,20 @@ class User{
     public function delete($sql){
         $this->conn->exec($sql);
     }
-
+    
     public function find($sql){
         $find=$this->conn->query($sql);
         return $find->fetchArray();
-
     }
-
+    
     public function update($sql){
     }
+
+
+    
+    //módulo específico para registrar no sistema
+    public function register($sql){
+        $this->conn->exec($sql);
+    }
+
 }

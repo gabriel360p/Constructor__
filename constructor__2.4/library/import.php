@@ -21,7 +21,12 @@ class Import{
         return include_once __DIR__ . '/../database/migrations/'.$migration.'.php';
     }
 
+    public static function importSeeder($seed){
+        return include_once __DIR__ . '/../database/seeders/'.$seed.'.php';
+    }
+
     public function importUniversal($import){
         return include_once __DIR__ . '/..'.$import.'';
     }
+
 }

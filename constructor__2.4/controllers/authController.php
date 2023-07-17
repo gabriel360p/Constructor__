@@ -54,7 +54,7 @@ class authController{
 
         $md5password=password_hash($_POST['password'],PASSWORD_DEFAULT);
     
-        $user->save("INSERT INTO 
+        $user->register("INSERT INTO 
             user (firstname,lastname,email,password) 
             VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['email']."','".$md5password."')");
         return Direction::redirect('/login');

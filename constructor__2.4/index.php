@@ -30,9 +30,7 @@ Import::importController('errorController');
 Import::importModel('user_model');
 Import::importModel('error_model');
 
-
 include __DIR__ . '/routes/path.php'; //leva para as rotas
-
 
 die();
 
