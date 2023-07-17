@@ -10,12 +10,22 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/dash">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/user">Perfil</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Opções
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/users/user">Perfil</a></li>
+            <li><a class="dropdown-item" href="/users/users">Usuários</a></li>
+          </ul>
         </li>
+
+
         <li class="nav-item">
           <a class="nav-link" href="/logout">Sair</a>
         </li>
+
       </ul>
     </div>
   </div>

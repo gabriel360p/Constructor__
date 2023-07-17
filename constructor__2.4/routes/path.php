@@ -11,16 +11,21 @@ switch ($uri) {
 
     case '/dash':
         Http::isGet($method);
-        Auth::authenticate();//verificando se o usário está autenticado
-        Guard::isAdmin();       
+        Auth::authenticate();//verificando se o usário está autenticado 
         Direction::render('/content/dash');
         break;
 
-    // User
     case '/users/user':
         Http::isGet($method);
         Auth::authenticate();
         userController::profile();
+        break;
+
+    case '/users/users':
+        Http::isGet($method);
+        Auth::authenticate();
+        Guard::isAdmin();
+        userController::index();
         break;
 
         

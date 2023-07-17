@@ -5,6 +5,11 @@ class userController{
     {
         return Direction::render('/user/profile');
     }
+
+    public static function index()
+    {
+        return Direction::render('/user/index');
+    }
 }
 
 

@@ -20,11 +20,10 @@ class User{
         return $find->fetchArray();
     }
     
-    public function update($sql){
+    public function all(){
+        return $users=$this->conn->query("SELECT * FROM user");
     }
 
-
-    
     //módulo específico para registrar no sistema
     public function register($sql){
         $this->conn->exec($sql);
