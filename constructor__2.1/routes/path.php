@@ -44,6 +44,16 @@ switch ($uri) {
         Http::isPost($method);
         authController::registrar();
         break;
+
+    // ------------------------------- 
+
+    // Errors
+
+    case '/errors/unauthorized':
+        Http::isGet($method);
+        errorController::unauthorized();
+        break;
+
     // ------------------------------- 
 
     case '/logout':

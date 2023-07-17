@@ -12,19 +12,26 @@ Import::importLibrary('direction');
 Import::importLibrary('storage');
 Import::importLibrary('password');
 Import::importLibrary('error');
+Import::importLibrary('guard');
+
+
+//importação das migrações
+Import::importMigration('users_migration');
+Import::importMigration('errors_migration');
+
 
 //importação dos controladores
 Import::importController('authController');
 Import::importController('userController');
+Import::importController('errorController');
+
 
 //importando modelos
 Import::importModel('user_model');
 Import::importModel('error_model');
 
 
-
 include __DIR__ . '/routes/path.php'; //leva para as rotas
-
 
 
 die();

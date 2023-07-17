@@ -21,7 +21,7 @@
 
                 <span class="display-4">NOT AUTHENTICATE</span>
                 <br>
-                <span class="badge bg-warning">Não autorizado, é preciso esta logado para acessar esta rota</span>
+                <span class="badge bg-warning">Não autenticado, é preciso esta logado para acessar esta rota</span>
             </div>
 
          </div>

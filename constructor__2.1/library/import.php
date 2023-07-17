@@ -14,9 +14,13 @@ class Import{
     }
     
     public static function importModel($model){
-        return include_once __DIR__ . '/../database/modelos/'.$model.'.php';
+        return include_once __DIR__ . '/../database/models/'.$model.'.php';
     }
     
+    public static function importMigration($migration){
+        return include_once __DIR__ . '/../database/migrations/'.$migration.'.php';
+    }
+
     public function importUniversal($import){
         return include_once __DIR__ . '/..'.$import.'';
     }

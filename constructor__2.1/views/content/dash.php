@@ -16,9 +16,7 @@
 
 <body>
 
-<?php
-  Import::importComponent('/content/navbar');
-?>
+<?php Import::importComponent('/content/navbar');?>
 
 <div class="p-3 mb-2 bg-light rounded-3 bg-white">
   <div class="container-fluid py-3">
